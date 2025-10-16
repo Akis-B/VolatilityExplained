@@ -1,0 +1,259 @@
+:root {
+  --primary: #1e2a5a;
+  --accent: #5f6ee1;
+  --background: #f7f8fc;
+  --card-bg: #ffffff;
+  --text: #1f1f2e;
+  --muted: #5e6a82;
+  --border-radius: 24px;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #f0f4ff 0%, #ffffff 65%);
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.hero {
+  background: radial-gradient(120% 120% at 50% 0%, rgba(95, 110, 225, 0.15) 0%, rgba(95, 110, 225, 0) 70%),
+    #f5f7ff;
+  padding: 5rem 1rem 4rem;
+  text-align: center;
+}
+
+.hero-inner {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.75rem, 6vw, 4.5rem);
+  letter-spacing: 0.35rem;
+  text-transform: uppercase;
+  color: rgba(30, 42, 90, 0.8);
+}
+
+.hero-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  letter-spacing: 0.4rem;
+  text-transform: lowercase;
+  color: var(--accent);
+}
+
+.content {
+  flex: 1;
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+.intro {
+  margin-top: -5rem;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 3.5rem clamp(1.5rem, 4vw, 4rem);
+  box-shadow: 0 18px 45px rgba(30, 42, 90, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.intro h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  margin: 0;
+  text-align: center;
+  color: var(--primary);
+}
+
+.intro h1 span {
+  color: var(--accent);
+}
+
+.learning-card {
+  background: linear-gradient(135deg, rgba(95, 110, 225, 0.12), rgba(95, 110, 225, 0));
+  border-radius: 20px;
+  padding: 2rem clamp(1rem, 3vw, 2.5rem);
+  border: 1px solid rgba(95, 110, 225, 0.15);
+}
+
+.card-heading {
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 1.25rem;
+}
+
+.learning-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.learning-card a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--accent);
+  font-size: 1.05rem;
+}
+
+.learning-card a:hover,
+.learning-card a:focus {
+  text-decoration: underline;
+}
+
+.purpose {
+  margin: 4rem auto 0;
+  text-align: center;
+  max-width: 720px;
+}
+
+.purpose h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+.purpose h2 span {
+  color: var(--accent);
+}
+
+.purpose p {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.resources {
+  margin: 4rem auto 0;
+}
+
+.resources h2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.75rem, 3vw, 2.1rem);
+  color: var(--primary);
+  margin-bottom: 2.5rem;
+}
+
+.resource-grid {
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.resource-card {
+  background: var(--card-bg);
+  border-radius: 22px;
+  padding: 2.25rem 1.75rem;
+  box-shadow: 0 12px 35px rgba(30, 42, 90, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.resource-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(95, 110, 225, 0.18), rgba(95, 110, 225, 0));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.resource-card:hover::before {
+  opacity: 1;
+}
+
+.resource-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(95, 110, 225, 0.14);
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+}
+
+.resource-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
+.resource-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.resource-link {
+  margin-top: auto;
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.resource-link:hover,
+.resource-link:focus {
+  text-decoration: underline;
+}
+
+.site-footer {
+  margin: 4rem auto 2.5rem;
+  max-width: 840px;
+  text-align: center;
+  color: rgba(31, 31, 46, 0.6);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  padding: 0 1.5rem;
+}
+
+@media (max-width: 680px) {
+  .intro {
+    margin-top: -4rem;
+    padding: 3rem 1.75rem;
+  }
+
+  .learning-card {
+    padding: 1.75rem;
+  }
+
+  .resource-card {
+    align-items: center;
+    text-align: center;
+  }
+
+  .resource-link {
+    align-self: center;
+  }
+}
